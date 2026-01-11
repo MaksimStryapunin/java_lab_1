@@ -75,6 +75,7 @@ public class Main {
                         break;
                     }
                 }
+                break;
             }// Задача 1
             case 2: {
                 int switch_choose;
@@ -118,28 +119,19 @@ public class Main {
                         break;
                     }
                     case 8: {
-                        int a, b, c;
-                        boolean z;
-                        System.out.print("введите a: ");
-                        a = scanner.nextInt();
-                        System.out.print("введите b: ");
-                        b = scanner.nextInt();
-                        System.out.print("введите c: ");
-                        c = scanner.nextInt();
-                        z = funk.sum3(a, b, c);
+                        int temp;
+                        System.out.print("Введите число: ");
+                        temp = scanner.nextInt();
                         System.out.println("-----------------------------------------------------------------------------------------");
-                        System.out.println("Результат: " + z);
+                        funk.day(temp);
                         break;
                     }
                     case 10: {
-                        int temp, res = 0;
-                        for (int i = 0; i < 5; i++) {
-                            System.out.print("Введите число " + (i + 1) + ": ");
-                            temp = scanner.nextInt();
-                            res = funk.lastNumSum(temp, res);
-                        }
+                        String temp;
+                        System.out.print("Введите число: ");
+                        temp = scanner.nextLine();
                         System.out.println("-----------------------------------------------------------------------------------------");
-                        System.out.println("Итого: " + res);
+                        funk.printDays(temp);
                         break;
                     }
                     default: {
@@ -147,6 +139,7 @@ public class Main {
                         break;
                     }
                 }
+                break;
             }// Задача 2
             case 3: {
                 int switch_choose;
@@ -219,6 +212,7 @@ public class Main {
                         break;
                     }
                 }
+                break;
             }// Задача 3
             case 4: {
                 int switch_choose;
@@ -291,6 +285,7 @@ public class Main {
                         break;
                     }
                 }
+                break;
             }// Задача 4
             default: {
                 System.out.println("нет в списке");

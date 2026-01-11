@@ -56,7 +56,7 @@ public class all_tasks { //Вариант 2
             return x + " лет";
         }
     }
-    public String day (int x){ // 8
+    public String day (int x){ // 10
         switch (x){
             case 1:{return "понедельник";}
             case 2:{return "вторник";}
@@ -69,6 +69,15 @@ public class all_tasks { //Вариант 2
         }
     }
     public void printDays (String x){ // 10
-
+        switch (x){
+            case "понедельник":{System.out.println("понедельник" + "вторник" + "среда" + "четверг" + "пятница" + "суббота" + "воскресенье");}
+            case "вторник":{System.out.println("вторник" + "среда" + "четверг" + "пятница" + "суббота" + "воскресенье");}
+            case "среда":{System.out.println("среда" + "четверг" + "пятница" + "суббота" + "воскресенье");}
+            case "четверг":{System.out.println("четверг" + "пятница" + "суббота" + "воскресенье");}
+            case "пятница":{System.out.println("пятница" + "суббота" + "воскресенье");}
+            case "суббота":{System.out.println("суббота" + "воскресенье");}
+            case "воскресенье":{System.out.println("воскресенье");}
+            default:{System.out.println("это не день недели");}
+        }
     }
 }
