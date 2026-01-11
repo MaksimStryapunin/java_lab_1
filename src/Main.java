@@ -221,48 +221,76 @@ public class Main {
                         break;
                     }
                     case 4: {
-                        int a, b;
-                        System.out.print("введите x: ");
-                        a = scanner.nextInt();
-                        System.out.print("введите y: ");
-                        b = scanner.nextInt();
+                        int pos, x;
+                        System.out.print("Введите размер массива: ");
+                        int size = scanner.nextInt();
+                        int[] arr = new int[size];
+                        System.out.println("Введите " + size + " элементов:");
+                        for (int i = 0; i < size; i++) {
+                            arr[i] = scanner.nextInt();
+                        }
+                        System.out.println("Введите позицию: ");
+                        pos = scanner.nextInt();
+                        System.out.println("Введите элемент: ");
+                        x = scanner.nextInt();
+                        arr = funk.add(arr, x, pos);
                         System.out.println("-----------------------------------------------------------------------------------------");
-                        System.out.println("Результат: " + funk.sum2(a, b));
+                        for (int i : arr){
+                            System.out.println(i + " ");
+                        }
                         break;
                     }
                     case 6: {
-                        int x;
-                        String z;
-                        System.out.print("введите x: ");
-                        x = scanner.nextInt();
-                        z = funk.age(x);
+                        System.out.print("Введите размер массива: ");
+                        int size = scanner.nextInt();
+                        int[] arr = new int[size];
+                        System.out.println("Введите " + size + " элементов:");
+                        for (int i = 0; i < size; i++) {
+                            arr[i] = scanner.nextInt();
+                        }
+                        funk.reverse(arr);
                         System.out.println("-----------------------------------------------------------------------------------------");
-                        System.out.println("Результат: " + z);
+                        for (int i : arr){
+                            System.out.println(i + " ");
+                        }
                         break;
                     }
                     case 8: {
-                        int a, b, c;
-                        boolean z;
-                        System.out.print("введите a: ");
-                        a = scanner.nextInt();
-                        System.out.print("введите b: ");
-                        b = scanner.nextInt();
-                        System.out.print("введите c: ");
-                        c = scanner.nextInt();
-                        z = funk.sum3(a, b, c);
+                        System.out.print("Введите размер массива: ");
+                        int size1 = scanner.nextInt();
+                        int[] arr1 = new int[size1];
+                        System.out.println("Введите " + size1 + " элементов:");
+                        for (int i = 0; i < size1; i++) {
+                            arr1[i] = scanner.nextInt();
+                        }
+                        System.out.print("Введите размер массива: ");
+                        int size2 = scanner.nextInt();
+                        int[] arr2 = new int[size2];
+                        System.out.println("Введите " + size2 + " элементов:");
+                        for (int i = 0; i < size2; i++) {
+                            arr2[i] = scanner.nextInt();
+                        }
+                        int[] arr3 = new int[size1 + size2];
+                        arr3 = funk.concat(arr1, arr2);
                         System.out.println("-----------------------------------------------------------------------------------------");
-                        System.out.println("Результат: " + z);
+                        for (int i : arr3){
+                            System.out.println(i + " ");
+                        }
                         break;
                     }
                     case 10: {
-                        int temp, res = 0;
-                        for (int i = 0; i < 5; i++) {
-                            System.out.print("Введите число " + (i + 1) + ": ");
-                            temp = scanner.nextInt();
-                            res = funk.lastNumSum(temp, res);
+                        System.out.print("Введите размер массива: ");
+                        int size = scanner.nextInt();
+                        int[] arr = new int[size];
+                        System.out.println("Введите " + size + " элементов:");
+                        for (int i = 0; i < size; i++) {
+                            arr[i] = scanner.nextInt();
                         }
+                        arr = funk.deleteNegative(arr);
                         System.out.println("-----------------------------------------------------------------------------------------");
-                        System.out.println("Итого: " + res);
+                        for (int i : arr){
+                            System.out.println(i + " ");
+                        }
                         break;
                     }
                     default: {

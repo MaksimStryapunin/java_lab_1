@@ -195,63 +195,54 @@ public class all_tasks { //Вариант 2
     }
     public int[] add(int[] arr, int x, int pos) { // 4
         if (pos < 0 || pos > arr.length) {
-
             return arr;
         }
         int[] newArr = new int[arr.length + 1];
-        // Копируем часть до pos
         for (int i = 0; i < pos; i++) {
             newArr[i] = arr[i];
         }
-        // Вставляем новый элемент
         newArr[pos] = x;
-        // Копируем часть после pos
         for (int i = pos; i < arr.length; i++) {
             newArr[i + 1] = arr[i];
         }
         return newArr;
     }
-    public void reverse(int[] arr) { // 6
-        int left = 0;
-        int right = arr.length - 1;
-        while (left < right) {
-            // Меняем местами
-            int temp = arr[left];
-            arr[left] = arr[right];
-            arr[right] = temp;
-            left++;
-            right--;
+    public void reverse(int[] arr) {
+        int[] arr1 = new int[arr.length];
+        int temp = 0;
+        for (int i = arr.length - 1; i >= 0; i--) {
+            arr1[temp] = arr[i];
+            temp++;
+        }
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = arr1[i];
         }
     }
     public int[] concat(int[] arr1, int[] arr2) { // 8
         int[] result = new int[arr1.length + arr2.length];
         int index = 0;
-        // Копируем первый массив
         for (int num : arr1) {
             result[index++] = num;
         }
-        // Копируем второй массив
         for (int num : arr2) {
             result[index++] = num;
         }
         return result;
     }
     public int[] deleteNegative(int[] arr) { // 10
-        // Сначала считаем, сколько неотрицательных элементов
         int count = 0;
-        for (int num : arr) {
-            if (num >= 0) {
+        for (int i : arr) {
+            if (i >= 0) {
                 count++;
             }
         }
-        // Создаём новый массив нужной длины и заполняем
-        int[] result = new int[count];
-        int index = 0;
-        for (int num : arr) {
-            if (num >= 0) {
-                result[index++] = num;
+        int[] arr1 = new int[count];
+        int i = 0;
+        for (int j : arr) {
+            if (j >= 0) {
+                arr1[i++] = j;
             }
         }
-        return result;
+        return arr1;
     }
 }
