@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
@@ -149,17 +150,11 @@ public class Main {
                 switch_choose = scanner.nextInt();
                 switch (switch_choose) {
                     case 2: {
-                        int x, y, z;
-                        boolean s = false;
-                        System.out.println("введите x");
-                        x = scanner.nextInt();
-                        System.out.println("введите y");
-                        y = scanner.nextInt();
-                        System.out.println("введите z");
-                        z = scanner.nextInt();
-                        s = funk.sum3(x, y, z);
+                        int a;
+                        System.out.print("введите число: ");
+                        a =  scanner.nextInt();
                         System.out.println("-----------------------------------------------------------------------------------------");
-                        System.out.println("Результат: " + s);
+                        System.out.println("Результат: " + funk.reverselistNums(a));
                         break;
                     }
                     case 4: {
@@ -169,42 +164,30 @@ public class Main {
                         System.out.print("введите y: ");
                         b = scanner.nextInt();
                         System.out.println("-----------------------------------------------------------------------------------------");
-                        System.out.println("Результат: " + funk.sum2(a, b));
+                        System.out.println("Результат: " + funk.pow(a, b));
                         break;
                     }
                     case 6: {
                         int x;
-                        String z;
-                        System.out.print("введите x: ");
+                        boolean z;
+                        System.out.print("введите число: ");
                         x = scanner.nextInt();
-                        z = funk.age(x);
+                        z = funk.equalNum(x);
                         System.out.println("-----------------------------------------------------------------------------------------");
                         System.out.println("Результат: " + z);
                         break;
                     }
                     case 8: {
-                        int a, b, c;
-                        boolean z;
-                        System.out.print("введите a: ");
-                        a = scanner.nextInt();
-                        System.out.print("введите b: ");
-                        b = scanner.nextInt();
-                        System.out.print("введите c: ");
-                        c = scanner.nextInt();
-                        z = funk.sum3(a, b, c);
+                        int x;
+                        System.out.print("введите число: ");
+                        x = scanner.nextInt();
                         System.out.println("-----------------------------------------------------------------------------------------");
-                        System.out.println("Результат: " + z);
+                        funk.leftTriangle(x);
                         break;
                     }
                     case 10: {
-                        int temp, res = 0;
-                        for (int i = 0; i < 5; i++) {
-                            System.out.print("Введите число " + (i + 1) + ": ");
-                            temp = scanner.nextInt();
-                            res = funk.lastNumSum(temp, res);
-                        }
                         System.out.println("-----------------------------------------------------------------------------------------");
-                        System.out.println("Итого: " + res);
+                        funk.guessGame();
                         break;
                     }
                     default: {
@@ -222,17 +205,19 @@ public class Main {
                 switch_choose = scanner.nextInt();
                 switch (switch_choose) {
                     case 2: {
-                        int x, y, z;
-                        boolean s = false;
-                        System.out.println("введите x");
+                        int x, res;
+                        System.out.print("Введите размер массива: ");
+                        int size = scanner.nextInt();
+                        int[] arr = new int[size];
+                        System.out.println("Введите " + size + " элементов:");
+                        for (int i = 0; i < size; i++) {
+                            arr[i] = scanner.nextInt();
+                        }
+                        System.out.println("Введите элемент: ");
                         x = scanner.nextInt();
-                        System.out.println("введите y");
-                        y = scanner.nextInt();
-                        System.out.println("введите z");
-                        z = scanner.nextInt();
-                        s = funk.sum3(x, y, z);
+                        res = funk.findLast(arr, x);
                         System.out.println("-----------------------------------------------------------------------------------------");
-                        System.out.println("Результат: " + s);
+                        System.out.println("Результат: " + res);
                         break;
                     }
                     case 4: {
